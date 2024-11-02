@@ -1,0 +1,204 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+.container {
+    max-width: 500px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+header h1 i {
+    font-size: 1.2em;
+    color: #c4302b;
+    margin-left: 5px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Tema switch */
+.theme-switch {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    color: #555;
+    cursor: pointer;
+}
+
+.theme-checkbox {
+    --toggle-size: 16px;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2em;
+    height: 1em;
+    background: #ccc;
+    position: relative;
+    border-radius: 50px;
+    transition: background 0.4s;
+    margin: 0 8px;
+}
+
+.theme-checkbox:checked {
+    background: #333;
+}
+
+.theme-checkbox::before {
+    content: "";
+    position: absolute;
+    width: 0.875em;
+    height: 0.875em;
+    top: 0.0625em;
+    left: 0.0625em;
+    background: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.theme-checkbox:checked::before {
+    transform: translateX(1em);
+}
+
+/* Ícones Sol e Lua */
+.icon-sun, .icon-moon {
+    font-size: 1.2em;
+    color: #555;
+    transition: color 0.4s, opacity 0.4s;
+}
+
+.icon-sun {
+    opacity: 1;
+}
+.theme-checkbox:checked ~ .icon-sun {
+    opacity: 0;
+}
+
+.icon-moon {
+    opacity: 0;
+}
+.theme-checkbox:checked ~ .icon-moon {
+    opacity: 1;
+}
+
+/* Formulário e campo de entrada */
+.form input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form input[type="text"]:focus {
+    border-color: #333;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Resultados e mensagens de erro */
+.result, .error {
+    margin-top: 15px;
+    font-size: 0.95em;
+    color: #333; /* Definição para tema claro */
+    line-height: 1.5;
+}
+
+.result h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.result p {
+    font-size: 1em;
+    color: #555;
+}
+
+.error {
+    color: #c00;
+    font-weight: bold;
+}
+
+/* Tema escuro */
+body.dark {
+    background-color: #181818;
+    color: #e0e0e0;
+}
+
+body.dark .container {
+    background-color: #222;
+}
+
+body.dark h1 {
+    color: #f0f0f0;
+}
+
+body.dark .form input[type="text"] {
+    background-color: #333;
+    color: #ddd;
+    border-color: #444;
+}
+
+body.dark .form input[type="text"]:focus {
+    border-color: #888;
+}
+
+body.dark button {
+    background-color: #444;
+}
+
+body.dark button:hover {
+    background-color: #666;
+}
+
+/* Estilo para texto de resultado e erro no tema escuro */
+body.dark .result, body.dark .error, body.dark .result p {
+    color: #ddd;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador de Vídeos do YouTube</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Analisador de Vídeos <i class="bi bi-youtube"></i></h1>
+            <label class="theme-switch">
+                <i class="bi bi-sun icon-sun"></i>
+                <input type="checkbox" class="theme-checkbox" id="themeToggle">
+                <i class="bi bi-moon icon-moon"></i>
+                
+            </label>
+        </header>
+        
+        <form method="POST" class="form">
+            <input type="text" name="video_url" placeholder="Cole a URL do vídeo aqui" required>
+            <button type="submit">Analisar</button>
+        </form>
+        
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="error">{{ messages[0] }}</div>
+            {% endif %}
+        {% endwith %}
+        
+        {% if analysis %}
+            <div class="result">
+                <h2>Análise:</h2>
+                <p>{{ analysis }}</p>
+            </div>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
