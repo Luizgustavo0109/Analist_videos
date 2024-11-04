@@ -14,7 +14,6 @@ Antes de iniciar, você vai precisar das seguintes ferramentas:
 
 - Python 3.9
 - Conta de desenvolvedor Google para configurar as APIs
-- Dependências listadas em `requirements.txt`
 
 ## ⚙️ Configuração
 
